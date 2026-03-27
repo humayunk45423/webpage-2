@@ -5,9 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://humayounkobir.github.io/">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Humayoun Kobir">
+    <title>Humayoun Kobir | Professional Engineer & Graphic Designer Portfolio</title>
     <meta name="description"
-        content="Official Portfolio of Humayoun Kobir. Diploma Engineer in Computer Science, Graphic Designer, and Specialist in Data & 3D Modeling.">
-    <title>Humayoun Kobir | Portfolio</title>
+        content="Official site of Humayoun Kobir. Diploma Engineer in Computer Science specializing in Graphic Design, 3D Visuals, Excel Data entry, and High-Performance Hardware Solutions.">
+    <meta name="keywords"
+        content="Humayoun Kobir, Humayun Kobir, Diploma Engineer, Computer Science, Graphic Designer, 3D Modeler, Blender Designer, Data Entry Professional, Excel Specialist, Freelance Engineer Bangladesh">
+
+    <!-- Open Graph Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://humayounkobir.github.io/">
+    <meta property="og:title" content="Humayoun Kobir | Engineer & Creative Designer">
+    <meta property="og:description"
+        content="Official site of Humayoun Kobir specializing in modern Engineering and Digital Design.">
+    <meta property="og:image" content="https://i.postimg.cc/NjZ9R8Z4/refined.png">
+
+    <!-- SEO JSON-LD Master Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://humayounkobir.github.io/#person",
+          "name": "Humayoun Kobir",
+          "alternateName": "Humayun Kobir",
+          "jobTitle": "Diploma Engineer & Graphic Designer",
+          "url": "https://humayounkobir.github.io/",
+          "image": "https://i.postimg.cc/NjZ9R8Z4/refined.png",
+          "sameAs": [
+            "https://github.com/humayunk45423",
+            "https://www.linkedin.com/in/humayounkobirkiron/",
+            "https://www.behance.net/humayounkobir",
+            "https://www.upwork.com/freelancers/~019f94538da41f401d"
+          ],
+          "knowsAbout": ["Computer Science", "Graphic Design", "3D Modeling", "Blender", "Microsoft Excel", "Hardware Optimization"]
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://humayounkobir.github.io/",
+          "name": "Humayoun Kobir Portfolio",
+          "publisher": {"@id": "https://humayounkobir.github.io/#person"}
+        }
+      ]
+    }
+    </script>
 
     <link rel="icon" type="image/png" href="https://i.postimg.cc/PJhCYJzg/Artboard_1logo_border_radious.png">
 
@@ -102,12 +146,15 @@
         body:before {
             inset: -18%;
             z-index: -4;
-            background: radial-gradient(circle at var(--px) var(--py), var(--l1), transparent 24%), radial-gradient(circle at calc(var(--px) + 18%) calc(var(--py) + 7%), var(--l2), transparent 22%), radial-gradient(circle at 76% 18%, var(--l3), transparent 28%);
-            filter: blur(40px);
+            background:
+                radial-gradient(circle at var(--px) var(--py), var(--l1) 0%, transparent 45%),
+                radial-gradient(circle at calc(var(--px) + 18%) calc(var(--py) + 7%), var(--l2) 0%, transparent 42%),
+                radial-gradient(circle at 76% 18%, var(--l3) 0%, transparent 50%);
             animation: drift 30s ease-in-out infinite alternate;
             transform: translate3d(0, 0, 0);
             will-change: transform;
-            opacity: 0.8
+            opacity: 0.8;
+            contain: strict;
         }
 
         @media (max-width: 1024px) {
@@ -889,7 +936,7 @@
 
         .reveal {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translate3d(0, 20px, 0);
             transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0, 0, 1);
             will-change: transform, opacity
         }
@@ -1183,7 +1230,7 @@
             <div class="container nav-wrap">
                 <a class="brand" href="#top" aria-label="Go to top">
                     <span class="mark">
-                        <img src="https://i.postimg.cc/nhqTbFH1/Logo-Animation.gif" alt="Animated Logo"
+                        <img src="https://i.postimg.cc/nhqTbFH1/Logo-Animation.gif" alt="Humayoun Kobir - Animated Brand Logo"
                             decoding="async">
                     </span>
                     <span class="brand-text">
@@ -1241,7 +1288,7 @@
                     <div class="hero-side reveal d1">
                         <div class="portrait">
                             <div class="frame">
-                                <img src="https://i.postimg.cc/NjZ9R8Z4/refined.png" alt="Portrait of Humayoun Kobir"
+                                <img src="https://i.postimg.cc/NjZ9R8Z4/refined.png" alt="Humayoun Kobir - Computer Science Engineer & Graphic Designer"
                                     decoding="async" loading="eager" fetchpriority="high">
                             </div>
                             <div class="portrait-meta">
@@ -1341,11 +1388,11 @@
                                 </div>
                                 <div class="project-links">
                                     <a href="https://maps.app.goo.gl/M4JL9vnC1bjpBjrp7" target="_blank"
-                                        class="project-link">
+                                        class="project-link" title="View Sadia Variety Store Banner Design">
                                         <span>Banner Design</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <a href="https://i.postimg.cc/JtwzFYkZ/Artboard_1logo_name_choto.png"
-                                        target="_blank" class="project-link">
+                                        target="_blank" class="project-link" title="View Sadia Variety Store Poster Work">
                                         <span>Poster Design</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1359,11 +1406,11 @@
                                         Gen</span></div>
                                 <div class="project-links">
                                     <a href="https://www.upwork.com/freelancers/~019f94538da41f401d?p=1736756878200664064"
-                                        target="_blank" class="project-link">
+                                        target="_blank" class="project-link" title="See Excel Data Projects on Upwork">
                                         <span>Excel Data Entry</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <a href="https://www.upwork.com/freelancers/~019f94538da41f401d?p=1734862411675783168"
-                                        target="_blank" class="project-link">
+                                        target="_blank" class="project-link" title="View Lead Generation Portfolio">
                                         <span>Lead Generation</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1377,15 +1424,15 @@
                                         class="tag">Poster</span><span class="tag">Ads</span></div>
                                 <div class="project-links">
                                     <a href="https://i.postimg.cc/XYt6kB9y/415043082_122093206244186305_1002341150726708714_n.jpg"
-                                        target="_blank" class="project-link">
+                                        target="_blank" class="project-link" title="View Tadrib Academy Logo Project">
                                         <span>Logo Design</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <a href="https://i.postimg.cc/rsqkt6xB/Artboard_1.png" target="_blank"
-                                        class="project-link">
+                                        class="project-link" title="View Facebook Ads Designs">
                                         <span>Facebook Ads Poster</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <a href="https://i.postimg.cc/fRVhdftB/Artboard_1_4x.png" target="_blank"
-                                        class="project-link">
+                                        class="project-link" title="View Marketplace Marketing Work">
                                         <span>Marketplace Ads Run</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1592,6 +1639,8 @@
             let typingSpeed = 100;
 
             const type = () => {
+                if (!state.isTypingVisible) return;
+
                 const currentWord = words[wordIndex];
                 const shouldDelete = isDeleting;
                 const currentSlice = currentWord.substring(0, charIndex);
@@ -1614,7 +1663,14 @@
             };
 
             if (typingElement) {
-                setTimeout(type, 1000);
+                const typeObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const wasVisible = state.isTypingVisible;
+                        state.isTypingVisible = entry.isIntersecting;
+                        if (entry.isIntersecting && !wasVisible) type();
+                    });
+                }, { threshold: 0.1 });
+                typeObserver.observe(typingElement);
             }
 
             // 3. Scroll Reveal Animation
@@ -1645,7 +1701,22 @@
                 targetY: window.innerHeight * 0.18,
                 isMoving: false,
                 isHovering: false,
-                animating: false
+                animating: false,
+                isTypingVisible: false,
+                scrollY: 0,
+                titlePositions: []
+            };
+
+            const computePositions = () => {
+                const sy = window.scrollY || window.pageYOffset;
+                state.titlePositions = Array.from(stickyHeads).map(head => {
+                    const rect = head.getBoundingClientRect();
+                    return {
+                        el: head,
+                        top: rect.top + sy,
+                        height: rect.height
+                    };
+                });
             };
 
             const updateLoop = () => {
@@ -1660,34 +1731,33 @@
                         state.x += dx * 0.12;
                         state.y += dy * 0.12;
 
-                        const px = (state.x / window.innerWidth) * 100;
-                        const py = (state.y / window.innerHeight) * 100;
+                        document.body.style.setProperty('--px', `${Math.round((state.x / window.innerWidth) * 100)}%`);
+                        document.body.style.setProperty('--py', `${Math.round((state.y / window.innerHeight) * 100)}%`);
 
-                        // Direct style updates for performance peaks
-                        document.body.style.setProperty('--px', `${px}%`);
-                        document.body.style.setProperty('--py', `${py}%`);
-                        
                         if (pointerGlow) {
-                            pointerGlow.style.transform = `translate3d(${state.x - 192}px, ${state.y - 192}px, 0)`;
+                            pointerGlow.style.transform = `translate3d(${Math.round(state.x - 192)}px, ${Math.round(state.y - 192)}px, 0)`;
                             pointerGlow.style.opacity = state.isHovering ? "0.8" : "0.5";
                         }
                         needsUpdate = true;
                     }
                 }
 
-                // 2. Scroll Title Fade Logic (Only when scrolling or near thresholds)
+                // 2. Zero-Layout Scroll Logic (The Peak)
                 if (window.innerWidth >= 1024) {
-                    stickyHeads.forEach(head => {
-                        const rect = head.getBoundingClientRect();
-                        if (rect.top < 250 && rect.bottom > -50) {
-                            if (rect.top < 150 && rect.top > 0) {
-                                const opacity = Math.max(0, (rect.top - 80) / 70);
-                                head.style.opacity = opacity.toString();
-                            } else if (rect.top <= 0) {
-                                head.style.opacity = "0";
+                    const sy = state.scrollY;
+                    state.titlePositions.forEach(pos => {
+                        const relativeTop = pos.top - sy;
+                        if (relativeTop < 250 && relativeTop > -100) {
+                            if (relativeTop < 150 && relativeTop > 0) {
+                                const opacity = Math.max(0, (relativeTop - 80) / 70);
+                                if (pos.el.style.opacity !== opacity.toString()) pos.el.style.opacity = opacity.toString();
+                            } else if (relativeTop <= 0) {
+                                if (pos.el.style.opacity !== "0") pos.el.style.opacity = "0";
                             } else {
-                                head.style.opacity = "1";
+                                if (pos.el.style.opacity !== "1") pos.el.style.opacity = "1";
                             }
+                        } else if (pos.el.style.opacity !== "" && relativeTop >= 250) {
+                            pos.el.style.opacity = "";
                         }
                     });
                 }
@@ -1707,6 +1777,10 @@
                 }
             };
 
+            window.addEventListener('resize', () => {
+                computePositions();
+            }, { passive: true });
+
             window.addEventListener('pointermove', (e) => {
                 if (window.innerWidth < 1024) return;
                 state.targetX = e.clientX;
@@ -1715,23 +1789,22 @@
                 state.isMoving = true;
                 startLoop();
 
-                // Stop move flag after a short delay
                 clearTimeout(state.moveTimeout);
                 state.moveTimeout = setTimeout(() => { state.isMoving = false; }, 100);
             }, { passive: true });
 
             window.addEventListener('pointerleave', () => {
-                state.targetX = window.innerWidth * 0.18;
-                state.targetY = window.innerHeight * 0.18;
                 state.isHovering = false;
                 startLoop();
             }, { passive: true });
 
             window.addEventListener('scroll', () => {
+                state.scrollY = window.scrollY || window.pageYOffset;
                 if (window.innerWidth >= 1024) startLoop();
             }, { passive: true });
 
             // Initial run
+            computePositions();
             if (window.innerWidth >= 1024) startLoop();
         });
     </script>
