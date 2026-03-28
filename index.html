@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://humayounkobir.github.io/">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Humayoun Kobir">
-    <title>Humayoun Kobir | Engineer & Graphic Designer Portfolio</title>
+    <title>Humayoun Kobir | Professional Engineer & Graphic Designer Portfolio</title>
     <meta name="description"
         content="Official site of Humayoun Kobir. Diploma Engineer in Computer Science specializing in Graphic Design, 3D Visuals, Excel Data entry, and High-Performance Hardware Solutions.">
     <meta name="keywords"
@@ -147,13 +147,13 @@
             inset: -18%;
             z-index: -4;
             background:
-                radial-gradient(circle at var(--px) var(--py), var(--l1) 0%, transparent 45%),
-                radial-gradient(circle at calc(var(--px) + 18%) calc(var(--py) + 7%), var(--l2) 0%, transparent 42%),
+                radial-gradient(circle at 35% 35%, var(--l1) 0%, transparent 45%),
+                radial-gradient(circle at 53% 42%, var(--l2) 0%, transparent 42%),
                 radial-gradient(circle at 76% 18%, var(--l3) 0%, transparent 50%);
             animation: drift 30s ease-in-out infinite alternate;
             transform: translate3d(0, 0, 0);
             will-change: transform;
-            opacity: 0.8;
+            opacity: 0.6;
             contain: strict;
         }
 
@@ -378,11 +378,12 @@
             color: var(--muted)
         }
 
-        .nav,
-        .toggle {
+        .nav {
             display: flex;
             align-items: center;
-            gap: .25rem
+            gap: .25rem;
+            position: relative;
+            isolation: isolate
         }
 
         .nav a,
@@ -395,25 +396,65 @@
             font: inherit;
             font-size: 0.88rem;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1)
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 2
         }
 
         .nav a {
             font-weight: 600
         }
 
-        .toggle:hover,
-        .nav a:hover {
+        .toggle:hover {
             background: var(--surface);
             color: var(--text);
             transform: translateY(-1px)
         }
 
-        .nav a:hover {
-            background: var(--accent);
+        .nav a.active {
             color: var(--accent-ink);
-            box-shadow: 0 8px 24px rgba(11, 11, 11, .12);
+            opacity: 1
+        }
+
+        .toggle:hover {
+            background: var(--surface);
+            color: var(--text);
             transform: translateY(-1px)
+        }
+
+        .nav a:not(.active):hover {
+            color: var(--text);
+            transform: translateY(-1px)
+        }
+
+        .nav a:hover {
+            background: transparent !important
+        }
+
+        .glider {
+            position: absolute;
+            height: calc(100% - 0.5rem);
+            top: 0.25rem;
+            left: 0;
+            background: var(--accent);
+            border-radius: 999px;
+            z-index: 1;
+            /* Transition width only for smoothness; transform is handled in JS */
+            transition: width 0.15s linear, opacity 0.3s ease;
+            pointer-events: none;
+            opacity: 0;
+            transform: scaleX(0.5) translate3d(0, 0, 0);
+            transform-origin: center;
+            will-change: transform, width, opacity;
+        }
+
+        .glider.moving {
+            transform: scaleX(0.85) scaleY(0.95)
+        }
+
+        .glider.visible {
+            opacity: 1;
+            transform: scaleX(1) scaleY(1)
         }
 
         .page-main {
@@ -825,12 +866,14 @@
         .method {
             display: flex;
             align-items: center;
-            gap: 1.75rem;
-            padding: 1.75rem 2rem;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.5rem 1.75rem;
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: 1.75rem;
-            transition: all 0.3s ease
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .method:hover {
@@ -839,16 +882,24 @@
             box-shadow: var(--shadow2)
         }
 
+        .method-main {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+            min-width: 0
+        }
+
         .method-icon {
-            width: 3.75rem;
-            height: 3.75rem;
+            width: 3.5rem;
+            height: 3.5rem;
             background: var(--soft);
             color: var(--accent);
             display: grid;
             place-items: center;
             border-radius: 1.25rem;
-            font-size: 1.6rem;
-            flex: 0 0 3.75rem
+            font-size: 1.5rem;
+            flex: 0 0 3.5rem
         }
 
         .method-text strong {
@@ -861,8 +912,66 @@
         }
 
         .method-text span {
-            font-size: 1.25rem;
-            font-weight: 700
+            font-size: 1.15rem;
+            font-weight: 700;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .copy-btn {
+            width: 2.75rem;
+            height: 2.75rem;
+            display: grid;
+            place-items: center;
+            background: var(--bg2);
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--muted);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            flex: 0 0 2.75rem;
+            position: relative;
+            z-index: 5;
+            font-size: 1.1rem
+        }
+
+        .copy-btn:hover {
+            background: var(--accent);
+            color: var(--accent-ink);
+            border-color: var(--accent);
+            transform: scale(1.1) rotate(5deg)
+        }
+
+        .copy-btn.copied {
+            background: #10b981;
+            color: white;
+            border-color: #10b981;
+            transform: scale(1.1)
+        }
+
+        .copy-btn::after {
+            content: "Copied!";
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #10b981;
+            color: white;
+            padding: 0.35rem 0.65rem;
+            border-radius: 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            white-space: nowrap
+        }
+
+        .copy-btn.copied::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0)
         }
 
         .social-grid {
@@ -1230,8 +1339,8 @@
             <div class="container nav-wrap">
                 <a class="brand" href="#top" aria-label="Go to top">
                     <span class="mark">
-                        <img src="https://i.postimg.cc/nhqTbFH1/Logo-Animation.gif" alt="Humayoun Kobir - Animated Brand Logo"
-                            decoding="async">
+                        <img src="https://i.postimg.cc/nhqTbFH1/Logo-Animation.gif"
+                            alt="Humayoun Kobir - Animated Brand Logo" decoding="async">
                     </span>
                     <span class="brand-text">
                         <strong>Humayoun Kobir</strong>
@@ -1239,9 +1348,11 @@
                     </span>
                 </a>
                 <nav class="nav" aria-label="Primary navigation">
+                    <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
+                    <div class="glider" id="navGlider"></div>
                 </nav>
                 <button class="toggle" id="themeToggle" type="button" aria-label="Switch color theme">
                     <i class="fa-solid fa-moon" id="themeIcon"></i>
@@ -1251,7 +1362,7 @@
         </header>
 
         <main class="page-main">
-            <section class="section hero">
+            <section class="section hero" id="about">
                 <div class="container hero-grid">
                     <div class="hero-copy reveal">
                         <h2>Assalamu Alaikum (Greetings)!</h2>
@@ -1288,8 +1399,9 @@
                     <div class="hero-side reveal d1">
                         <div class="portrait">
                             <div class="frame">
-                                <img src="https://i.postimg.cc/NjZ9R8Z4/refined.png" alt="Humayoun Kobir - Computer Science Engineer & Graphic Designer"
-                                    decoding="async" loading="eager" fetchpriority="high">
+                                <img src="https://i.postimg.cc/NjZ9R8Z4/refined.png"
+                                    alt="Humayoun Kobir - Computer Science Engineer & Graphic Designer" decoding="async"
+                                    loading="eager" fetchpriority="high">
                             </div>
                             <div class="portrait-meta">
                                 <div class="available">
@@ -1392,7 +1504,8 @@
                                         <span>Banner Design</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <a href="https://i.postimg.cc/JtwzFYkZ/Artboard_1logo_name_choto.png"
-                                        target="_blank" class="project-link" title="View Sadia Variety Store Poster Work">
+                                        target="_blank" class="project-link"
+                                        title="View Sadia Variety Store Poster Work">
                                         <span>Poster Design</span><i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1527,20 +1640,30 @@
                         <p class="about-text">Open for collaborations, freelance projects, or just a coffee chat about
                             tech and design.</p>
                         <div class="contact-methods">
-                            <a href="mailto:humayunk45423@gmail.com" class="method">
-                                <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
-                                <div class="method-text">
-                                    <strong>Send an Email</strong>
-                                    <span>humayunk45423@gmail.com</span>
-                                </div>
-                            </a>
-                            <a href="https://wa.me/8801721445207" target="_blank" class="method">
-                                <div class="method-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                                <div class="method-text">
-                                    <strong>Instant Response</strong>
-                                    <span>+8801721445207</span>
-                                </div>
-                            </a>
+                            <div class="method" id="mailMethod">
+                                <a href="mailto:humayunk45423@gmail.com" class="method-main" aria-label="Send email">
+                                    <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                                    <div class="method-text">
+                                        <strong>Send an Email</strong>
+                                        <span id="emailText">humayunk45423@gmail.com</span>
+                                    </div>
+                                </a>
+                                <button class="copy-btn" title="Copy Email" onclick="copyContact('humayunk45423@gmail.com', this)">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="method" id="waMethod">
+                                <a href="https://wa.me/8801721445207" target="_blank" class="method-main" aria-label="Chat on WhatsApp">
+                                    <div class="method-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                                    <div class="method-text">
+                                        <strong>Instant Response</strong>
+                                        <span id="waText">+8801721445207</span>
+                                    </div>
+                                </a>
+                                <button class="copy-btn" title="Copy Number" onclick="copyContact('+8801721445207', this)">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -1742,9 +1865,10 @@
                     }
                 }
 
-                // 2. Zero-Layout Scroll Logic (The Peak)
+                // 2. Zero-Layout Scroll Logic (The Peak) + Glider Sync
+                const sy = state.scrollY;
                 if (window.innerWidth >= 1024) {
-                    const sy = state.scrollY;
+                    // Update Page Reveals (Throttled via loop)
                     state.titlePositions.forEach(pos => {
                         const relativeTop = pos.top - sy;
                         if (relativeTop < 250 && relativeTop > -100) {
@@ -1760,9 +1884,13 @@
                             pos.el.style.opacity = "";
                         }
                     });
+
+                    // Update Glider (Pixel Perfect Sync)
+                    if (typeof updateGliderSync === "function") updateGliderSync();
                 }
 
-                if (needsUpdate || state.isMoving) {
+                if (needsUpdate || state.isMoving || (sy !== state.lastScrollY)) {
+                    state.lastScrollY = sy;
                     requestAnimationFrame(updateLoop);
                     state.animating = true;
                 } else {
@@ -1803,8 +1931,109 @@
                 if (window.innerWidth >= 1024) startLoop();
             }, { passive: true });
 
+            // 5. Scroll Sync Navigation Logic (Ultra-Optimized 1:1 Sync)
+            const navLinks = document.querySelectorAll('.nav a');
+            const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href'))).filter(s => s);
+            const glider = document.getElementById('navGlider');
+
+            // Cache metrics to avoid layout thrashing in the scroll loop
+            let cachedNavMetrics = [];
+            let cachedSectionMetrics = [];
+
+            const refreshMetrics = () => {
+                const scrollMargin = 72;
+                cachedNavMetrics = Array.from(navLinks).map(link => ({
+                    left: link.offsetLeft,
+                    width: link.offsetWidth
+                }));
+                cachedSectionMetrics = sections.map(section => ({
+                    target: section.offsetTop - scrollMargin
+                }));
+            };
+
+            const updateGliderSync = () => {
+                if (!glider || window.innerWidth < 1024) return;
+
+                const sy = state.scrollY;
+                const sMetrics = cachedSectionMetrics;
+                const nMetrics = cachedNavMetrics;
+
+                if (!sMetrics.length || !nMetrics.length) return;
+
+                let targetLeft, targetWidth, activeIdx = -1;
+
+                // Handle Bottom of Page first (Ensures Contact lights up)
+                const isAtBottom = (window.innerHeight + sy) >= document.body.offsetHeight - 80;
+
+                if (isAtBottom) {
+                    activeIdx = sMetrics.length - 1;
+                    targetLeft = nMetrics[activeIdx].left;
+                    targetWidth = nMetrics[activeIdx].width;
+                } else if (sy <= sMetrics[0].target) {
+                    targetLeft = nMetrics[0].left;
+                    targetWidth = nMetrics[0].width;
+                    activeIdx = 0;
+                } else if (sy >= sMetrics[sMetrics.length - 1].target) {
+                    targetLeft = nMetrics[sMetrics.length - 1].left;
+                    targetWidth = nMetrics[sMetrics.length - 1].width;
+                    activeIdx = sMetrics.length - 1;
+                } else {
+                    for (let i = 0; i < sMetrics.length - 1; i++) {
+                        const startPoint = sMetrics[i].target;
+                        const endPoint = sMetrics[i + 1].target;
+
+                        if (sy >= startPoint && sy < endPoint) {
+                            const progress = (sy - startPoint) / (endPoint - startPoint);
+                            targetLeft = nMetrics[i].left + (nMetrics[i + 1].left - nMetrics[i].left) * progress;
+                            targetWidth = nMetrics[i].width + (nMetrics[i + 1].width - nMetrics[i].width) * progress;
+                            activeIdx = progress > 0.5 ? i + 1 : i;
+                            break;
+                        }
+                    }
+                }
+
+                if (targetLeft !== undefined) {
+                    glider.style.transform = `translate3d(${targetLeft}px, 0, 0)`;
+                    glider.style.width = `${Math.round(targetWidth)}px`;
+                    glider.classList.add('visible');
+
+                    navLinks.forEach((link, idx) => {
+                        const activeClass = 'active';
+                        if (idx === activeIdx) {
+                            if (!link.classList.contains(activeClass)) link.classList.add(activeClass);
+                        } else {
+                            if (link.classList.contains(activeClass)) link.classList.remove(activeClass);
+                        }
+                    });
+                }
+            };
+
+            window.addEventListener('resize', () => {
+                computePositions();
+                refreshMetrics();
+                updateGliderSync();
+            }, { passive: true });
+
+            // 6. Copy to Clipboard Utility
+            window.copyContact = (text, btn) => {
+                navigator.clipboard.writeText(text).then(() => {
+                    const icon = btn.querySelector('i');
+                    const originalClass = icon.className;
+                    
+                    btn.classList.add('copied');
+                    icon.className = 'fa-solid fa-check';
+                    
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                        icon.className = originalClass;
+                    }, 2000);
+                });
+            };
+
             // Initial run
             computePositions();
+            refreshMetrics();
+            updateGliderSync();
             if (window.innerWidth >= 1024) startLoop();
         });
     </script>
