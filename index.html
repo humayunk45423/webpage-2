@@ -57,9 +57,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%20%21%40%23%24%25%5E%26%2A%28%29-_%2B%3D%5B%5D%7B%7D%7C%3B%3A%27%22%2C.%3C%3E%3F%2F%5C"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%20%21%40%23%24%25%5E%26%2A%28%29-_%2B%3D%5B%5D%7B%7D%7C%3B%3A%27%22%2C.%3C%3E%3F%2F%5C"
         rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -947,9 +951,9 @@
         }
 
         .copy-btn.copied {
-            background: #10b981;
-            color: white;
-            border-color: #10b981;
+            background: var(--accent);
+            color: var(--accent-ink);
+            border-color: var(--accent);
             transform: scale(1.1)
         }
 
@@ -959,8 +963,8 @@
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%) translateY(10px);
-            background: #10b981;
-            color: white;
+            background: var(--accent);
+            color: var(--accent-ink);
             padding: 0.35rem 0.65rem;
             border-radius: 0.5rem;
             font-size: 0.7rem;
