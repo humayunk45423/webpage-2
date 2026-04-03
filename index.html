@@ -133,12 +133,12 @@
             --grid: rgba(255, 255, 255, .03);
             --vibrant-gradient: linear-gradient(135deg, #ff7a00, #ffba00);
             --aura: radial-gradient(circle at top right, rgba(255, 107, 0, 0.08) 0%, transparent 60%),
-                    radial-gradient(circle at bottom left, rgba(22, 88, 68, 0.05) 0%, transparent 60%);
+                radial-gradient(circle at bottom left, rgba(22, 88, 68, 0.05) 0%, transparent 60%);
         }
 
         :root {
             --aura: radial-gradient(circle at top right, rgba(22, 88, 68, 0.06) 0%, transparent 60%),
-                    radial-gradient(circle at bottom left, rgba(255, 107, 0, 0.05) 0%, transparent 60%);
+                radial-gradient(circle at bottom left, rgba(255, 107, 0, 0.05) 0%, transparent 60%);
         }
 
         * {
@@ -577,7 +577,7 @@
             font-weight: 900;
             color: #000;
             transition: color 0.5s var(--bezier);
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
         }
 
         html[data-theme=dark] .hero-copy h1 {
@@ -631,7 +631,7 @@
             background: var(--vibrant-gradient);
             color: var(--accent-ink);
             box-shadow: 0 8px 16px var(--soft);
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .btn.primary:hover {
@@ -662,7 +662,8 @@
             background-clip: padding-box, border-box;
         }
 
-        .btn.outline span, .btn.outline i {
+        .btn.outline span,
+        .btn.outline i {
             background: var(--vibrant-gradient);
             -webkit-background-clip: text;
             background-clip: text;
@@ -676,7 +677,8 @@
             box-shadow: 0 10px 25px -5px var(--soft);
         }
 
-        .btn.outline:hover span, .btn.outline:hover i {
+        .btn.outline:hover span,
+        .btn.outline:hover i {
             -webkit-text-fill-color: var(--accent-ink);
         }
 
@@ -1178,8 +1180,13 @@
             color: var(--accent)
         }
 
-        .show-mobile { display: none; }
-        .hide-mobile { display: inline; }
+        .show-mobile {
+            display: none;
+        }
+
+        .hide-mobile {
+            display: inline;
+        }
 
         @keyframes drift {
             from {
@@ -1515,8 +1522,13 @@
                 border-radius: 999px;
             }
 
-            .hide-mobile { display: none; }
-            .show-mobile { display: inline; }
+            .hide-mobile {
+                display: none;
+            }
+
+            .show-mobile {
+                display: inline;
+            }
 
             .project-links {
                 gap: 0.35rem;
@@ -1787,7 +1799,8 @@
                 </div>
             </section>
 
-            <section class="section split-section" id="services" style="content-visibility: auto; contain-intrinsic-size: 1px 1000px;">
+            <section class="section split-section" id="services"
+                style="content-visibility: auto; contain-intrinsic-size: 1px 1000px;">
                 <div class="container">
                     <h2 class="section-title reveal">Services</h2>
                     <div class="services-grid" style="contain: layout;">
@@ -1809,7 +1822,8 @@
                             <ul class="chips">
                                 <li>C and C++</li>
                                 <li>Python</li>
-                                <li>HTML, CSS, <span class="hide-mobile">JavaScript</span><span class="show-mobile">JS</span></li>
+                                <li>HTML, CSS, <span class="hide-mobile">JavaScript</span><span
+                                        class="show-mobile">JS</span></li>
                                 <li>VBS for Windows</li>
                             </ul>
                         </article>
@@ -1832,7 +1846,8 @@
                                 <li>3D modeling</li>
                                 <li>Rendering</li>
                                 <li>Lighting</li>
-                                <li><span class="hide-mobile">Architectural visuals</span><span class="show-mobile">Arch Viz</span></li>
+                                <li><span class="hide-mobile">Architectural visuals</span><span class="show-mobile">Arch
+                                        Viz</span></li>
                             </ul>
                         </article>
                         <article class="service-card reveal d1">
@@ -1840,10 +1855,12 @@
                             <h3>PC Software & Hardware</h3>
                             <p>Hands-on setup, diagnostics, optimization, and maintenance across devices.</p>
                             <ul class="chips">
-                                <li><span class="hide-mobile">Hardware diagnostics</span><span class="show-mobile">Diagnostics</span></li>
+                                <li><span class="hide-mobile">Hardware diagnostics</span><span
+                                        class="show-mobile">Diagnostics</span></li>
                                 <li>BIOS and thermals</li>
                                 <li>OS installs</li>
-                                <li><span class="hide-mobile">Custom ROM flashing</span><span class="show-mobile">ROM Flashing</span></li>
+                                <li><span class="hide-mobile">Custom ROM flashing</span><span class="show-mobile">ROM
+                                        Flashing</span></li>
                             </ul>
                         </article>
                         <article class="service-card reveal d2">
@@ -1851,7 +1868,8 @@
                             <h3>Electronics & DIY</h3>
                             <p>Practical builds using core electronics knowledge and reliable component testing.</p>
                             <ul class="chips">
-                                <li><span class="hide-mobile">Breadboard prototyping</span><span class="show-mobile">Circuit Builds</span></li>
+                                <li><span class="hide-mobile">Breadboard prototyping</span><span
+                                        class="show-mobile">Circuit Builds</span></li>
                                 <li>DC-DC systems</li>
                                 <li>Charging modules</li>
                                 <li>Basic soldering</li>
@@ -1861,7 +1879,8 @@
                 </div>
             </section>
 
-            <section class="section split-section" id="projects" style="content-visibility: auto; contain-intrinsic-size: 1px 1200px;">
+            <section class="section split-section" id="projects"
+                style="content-visibility: auto; contain-intrinsic-size: 1px 1200px;">
                 <div class="container">
                     <h2 class="section-title reveal">Projects</h2>
                     <div class="projects-grid" style="contain: layout style;">
@@ -1984,7 +2003,9 @@
                                 <div class="project-links">
                                     <a href="https://www.youtube.com/watch?v=iik25wqIuFo" target="_blank"
                                         class="project-link">
-                                        <span><span class="hide-mobile">Various Document Edits</span><span class="show-mobile">Various Doc Edits</span></span><i class="fa-solid fa-arrow-right"></i>
+                                        <span><span class="hide-mobile">Various Document Edits</span><span
+                                                class="show-mobile">Various Doc Edits</span></span><i
+                                            class="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <a href="https://www.youtube.com/watch?v=x5RwzioNiiM" target="_blank"
                                         class="project-link">
@@ -2055,38 +2076,34 @@
                         <a href="https://www.linkedin.com/in/humayounkobirkiron/" target="_blank" class="social-item">
                             <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
                         </a>
-                        <a href="https://discord.gg/t6SJQwdj" target="_blank" class="social-item">
-                            <i class="fa-brands fa-discord"></i><span>Discord</span>
+                        <a href="https://www.behance.net/humayunk45423" target="_blank" class="social-item">
+                            <i class="fa-brands fa-behance"></i><span>Behance</span>
+                        </a>
+                        <a href="https://dribbble.com/humayunk45423" target="_blank" class="social-item">
+                            <i class="fa-brands fa-dribbble"></i><span>Dribbble</span>
+                        </a>
+                        <a href="https://www.upwork.com/freelancers/~019f94538da41f401d" target="_blank" class="social-item">
+                            <i class="fa-brands fa-upwork"></i><span>Upwork</span>
                         </a>
                         <a href="https://www.reddit.com/user/Great_Media_7280/" target="_blank" class="social-item">
                             <i class="fa-brands fa-reddit"></i><span>Reddit</span>
                         </a>
-                        <a href="https://www.behance.net/humayounkobir" target="_blank" class="social-item">
-                            <i class="fa-brands fa-behance"></i><span>Behance</span>
+                        <a href="https://discord.gg/t6SJQwdj" target="_blank" class="social-item">
+                            <i class="fa-brands fa-discord"></i><span>Discord</span>
                         </a>
                         <a href="https://stackoverflow.com/users/20905785" target="_blank" class="social-item">
                             <i class="fa-brands fa-stack-overflow"></i><span>Stack Overflow</span>
                         </a>
-                        <a href="https://twitch.tv/humayunk45423" target="_blank" class="social-item">
-                            <i class="fa-brands fa-twitch"></i><span>Twitch</span>
-                        </a>
-                        <a href="https://www.upwork.com/freelancers/~019f94538da41f401d" target="_blank"
-                            class="social-item">
-                            <i class="fa-brands fa-upwork"></i><span>Upwork</span>
-                        </a>
                         <a href="https://muslimbangla.com/quran" target="_blank" class="social-item">
                             <i class="fa-solid fa-book-open"></i><span>Read Quran</span>
                         </a>
-                        <a href="https://drive.google.com/drive/folders/13VIzyy7N3K6mcx4eBnc7XTe4E-SxVGEG"
-                            target="_blank" class="social-item">
+                        <a href="https://drive.google.com/drive/folders/13VIzyy7N3K6mcx4eBnc7XTe4E-SxVGEG" target="_blank" class="social-item">
                             <i class="fa-solid fa-mosque"></i><span>Dawah Files</span>
                         </a>
-                        <a href="https://drive.google.com/drive/folders/1G07OIOtE6cf6giihhwy2U-Z0rHOE3v8m?usp=sharing"
-                            target="_blank" class="social-item">
+                        <a href="https://drive.google.com/drive/folders/1G07OIOtE6cf6giihhwy2U-Z0rHOE3v8m?usp=sharing" target="_blank" class="social-item">
                             <i class="fa-solid fa-folder-open"></i><span>Important Files</span>
                         </a>
-                        <a href="https://github.com/humayunk45423/Webpage-2/releases/download/v1.0/Humayoun.Kobir.apk" class="social-item" aria-label="Download Humayoun Kobir Android App"
-                            role="link">
+                        <a href="https://github.com/humayunk45423/Webpage-2/releases/download/v1.0/Humayoun.Kobir.apk" class="social-item" aria-label="Download Humayoun Kobir Android App" role="link">
                             <i class="fa-brands fa-android" aria-hidden="true"></i><span>App Download</span>
                         </a>
                     </div>
