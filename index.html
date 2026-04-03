@@ -789,6 +789,8 @@
             flex-direction: column;
             position: relative;
             overflow: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         .service-card:hover {
@@ -884,6 +886,8 @@
             overflow: hidden;
             transition: all 0.45s var(--bezier);
             will-change: transform, box-shadow;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         .project-card:hover {
@@ -978,6 +982,8 @@
             transition: all 0.4s var(--bezier);
             position: relative;
             will-change: transform, border-color;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         .method:hover {
@@ -1113,6 +1119,8 @@
             position: relative;
             z-index: 1;
             will-change: transform, background;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         .social-item:hover {
